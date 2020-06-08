@@ -20,7 +20,7 @@ export default class EditExcercise extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
   componentDidMount() {
-    axios.get("http://localhost:5000/users/").then((res) => {
+    axios.get("https://backend-express123.herokuapp.com/users/").then((res) => {
         console.log(res)
       if (res.data.length > 0) {
         this.setState({
@@ -58,7 +58,7 @@ export default class EditExcercise extends Component {
       duration: this.state.duration,
       date: this.state.date,
     };
-    axios.post("http://localhost:5000/excercise/update/"+this.props.match.params.id)
+    axios.post("https://backend-express123.herokuapp.com/excercise/update/"+this.props.match.params.id)
     console.log(exercise);
     window.location = "/";
     return <div>Added!</div>;

@@ -33,7 +33,7 @@ export default class Excerciselist extends Component {
     };
   }
   async componentDidMount() {
-    let res = await axios.get("http://localhost:5000/excercise");
+    let res = await axios.get("https://backend-express123.herokuapp.com/excercise");
 
     if (res.data.length > 0) {
       this.setState({
@@ -42,7 +42,7 @@ export default class Excerciselist extends Component {
     }
   }
   deleteExcercise(id) {
-    axios.delete("http://localhost:5000/excercise/" + id).then((res) => {
+    axios.delete("https://backend-express123.herokuapp.com/excercise/" + id).then((res) => {
       this.setState({
         excercises: this.state.excercises.filter((item) => item._id !== id),
       });
